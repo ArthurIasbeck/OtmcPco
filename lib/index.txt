@@ -1,0 +1,62 @@
+- axisCommaI - Substitui os '.' dos eixos que marcam os decimais por ','.
+
+- [mag, phase] = bodeI(G,w) - Retorna pontos do Diagrama de Bode (tanto de magnitude quanto de fase) na forma de vetor.
+    G - Função de transferência.
+    w - Frequências em que se deseja obter o diagrama.
+    mag - Magnitude de G.
+    phase - Fase de G.
+
+- [mag, phase] = bodeIdB(G,w) - Igual a função anterior porém retorna a magnitude em dB.
+
+- array = convertArray(struct) - Converte uma estrutura na forma (:,:,i) para um vetor de i elementos. Esta estrutura é retornada por algumas funções como a função [mag, phase] = bode(G).
+    array - Retorno na forma de vetor.
+    struct - Estrutura na forma (:,:,i) a ser convertida.
+
+- strLatex = correctLatex(str) - Função que convert strings para o formato LaTeX. Letras acentuadas são convertidas para seus correspondentes em LaTeX. Por exemplo 'ç' é substituído por '\c{c}'. Esta função é utilizada por outras funções que escrevem o título do gráfico ou dos eixos no formato LaTeX.
+    strLatex - String no formato LaTeX.
+    str - String a ser convertida.
+
+- cropPlotI - Função que remove de uma figura espaços brancos que ficam em torno do plot.
+
+- figureI - Cria uma figura com as dimensões [520 350 670 550].
+
+- fullScreen - Maximiza uma figura.
+
+- init - Executa o código (clc; clear; close all; format short g;)
+
+- legendI(lgd, pos) - Insere no plot uma legenda no formato LaTeX. 
+    lgd - Célula que contém as legendas ({'legenda1','legenda2'}).
+    pos - Determina o quadrante em que a legenda será posicionada.
+
+- plotI(x,y,config) - Monta um plot mais sofisticado alterando a espessura da linha, o interpretador (LaTeX) e o tamanho da fonte dos eixos, o tamanho da figura, dentre outras configurações.
+    x - Vetor com os valores das abssissas de cada ponto do gráfico.
+    y - Vetor com os valores das ordenadas de cada ponto do gráfico.
+    config - Configuração de estilo e cor de linha ('-k' para linha contínua preta por exemplo. Para mais detalhes acesse 'help plot').
+
+- plotIz(x,y,config) - Igual a função anterior porém plota os pontos em forma de escada (formato típico em amostragens digitais).
+
+- printI(nameFile) - Salva a última figura que foi aberta num arquivo '.eps' numa pasta de nome 'results', criada na mesma pasta onde está executando o programa principal. Além disso, é criada dentro da pasta 'results' uma pasta 'fig', onde a mesma figura é salva no formato '.fig' para o caso de ser necessário editá-la posteriormente. 
+    nameFile - Nome do arquivo gerado a partir da execução desta função sem extensões.
+
+- rlocusI(G, K) - Função que plot o Root Locus em um gráfico mais sofisticado (de forma semelhante à funçao plotI). Função ainda em desenvolvimento.
+    G - Função de transferência. 
+    K - Vetor com os valores de ganho que deseja-se utilizar para desenhar o Root Locus. Caso K = [], os valores dos ganhos são escolhidos de forma automática.
+
+- aRound = roundToArray(a, B) - A partir de um valor 'a' e um vetor 'B', é determinado qual posição de 'B' contém um elemento 'aRound' que se aproxime o máximo possível de 'a'. Por exemplo, se a = 5 e B = [0 4 9 15], então aRound = 4. 
+
+- semilogxI(x,y,config) - Constroi um gráfico mais sofisticado com o eixo x em escala logarítmica. Os parâmetros são os mesmos da função plotI.
+
+- semilogyI(x,y,config) - Semelhante à função anterior, porém constrói um gráfico com o eixo y em escala logaritmica.
+
+- titleI(strTitle) - Adiciona um título em formato LaTeX ao gráfico.
+	strTitle - String contendo o título desejado.
+
+- xlabelI(strLabel) - Adiciona um título em formato LaTeX ao eixo x do gráfico.
+	strLabel - String contendo o título desejado para o eixo x.
+
+- xlimI(x) - Ajusta a dimensão do eixo x de forma que ela se ajuste aos elementos do vetor x. Executa xlim([min(x) max(x)]).
+
+- ylabelI(strLabel) - Adiciona um título em formato LaTeX ao eixo y do gráfico.
+	strLabel - String contendo o título desejado para o eixo y.
+
+- ylimI(y) - Ajusta a dimensão do eixo y de forma que ela se ajuste aos elementos do vetor y. Executa ylim([min(y) max(y)]).
